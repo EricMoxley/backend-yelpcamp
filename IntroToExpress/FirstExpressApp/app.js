@@ -17,6 +17,10 @@ app.get("/pog", function(req, res){
     res.send("champ!");
 });
 
+app.get("*", function(req, res){
+    res.send("NOPE");
+});
+
 app.listen(3000, function() { 
     console.log('Server listening on port 3000'); 
   });
