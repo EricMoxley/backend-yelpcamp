@@ -12,4 +12,4 @@ function average(scores){
 
 
 
-let or const
+var or const
