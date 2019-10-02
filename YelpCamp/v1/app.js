@@ -2,20 +2,17 @@ let express = require("express");
 let app = express();
 let bodyParser = require("body-parser");
 let campgrounds = [
-    {name: "Salmon Creek", image: "https://pixabay.com/get/52e3d5404957a514f6da8c7dda793f7f1636dfe2564c704c732673d19544c758_340.jpg"},
-    {name: "Granite Hill", image: "https://pixabay.com/get/57e1dd4a4350a514f6da8c7dda793f7f1636dfe2564c704c732673d19544c758_340.jpg"},
-    {name: "Mountain Goat's Rest", image: "https://www.photosforclass.com/download/pixabay-1851092?webUrl=https%3A%2F%2Fpixabay.com%2Fget%2F57e8d0424a5bae14f6da8c7dda793f7f1636dfe2564c704c732673d19544c758_960.jpg&user=Pexels"}, 
-    {name: "Salmon Creek", image: "https://pixabay.com/get/52e3d5404957a514f6da8c7dda793f7f1636dfe2564c704c732673d19544c758_340.jpg"},
-    {name: "Granite Hill", image: "https://pixabay.com/get/57e1dd4a4350a514f6da8c7dda793f7f1636dfe2564c704c732673d19544c758_340.jpg"},
+    {name: "Salmon Creek", image: "https://photosforclass.com/download/pixabay-3048299?webUrl=https%3A%2F%2Fpixabay.com%2Fget%2F55e0d14b485ba514f6da8c7dda793f7f1636dfe2564c704c732672dc9644c45d_960.jpg&user=kareni"},
+    {name: "Granite Hill", image: "https://photosforclass.com/download/pixabay-1807524?webUrl=https%3A%2F%2Fpixabay.com%2Fget%2F57e8d5444f50a814f6da8c7dda793f7f1636dfe2564c704c732672dc9644c45d_960.jpg&user=sasint"},
     {name: "Mountain Goat's Rest", image: "https://www.photosforclass.com/download/pixabay-1851092?webUrl=https%3A%2F%2Fpixabay.com%2Fget%2F57e8d0424a5bae14f6da8c7dda793f7f1636dfe2564c704c732673d19544c758_960.jpg&user=Pexels"},
-    {name: "Salmon Creek", image: "https://pixabay.com/get/52e3d5404957a514f6da8c7dda793f7f1636dfe2564c704c732673d19544c758_340.jpg"},
-    {name: "Granite Hill", image: "https://pixabay.com/get/57e1dd4a4350a514f6da8c7dda793f7f1636dfe2564c704c732673d19544c758_340.jpg"},
+    {name: "Salmon Creek", image: "https://photosforclass.com/download/pixabay-3048299?webUrl=https%3A%2F%2Fpixabay.com%2Fget%2F55e0d14b485ba514f6da8c7dda793f7f1636dfe2564c704c732672dc9644c45d_960.jpg&user=kareni"},
+    {name: "Granite Hill", image: "https://photosforclass.com/download/pixabay-1807524?webUrl=https%3A%2F%2Fpixabay.com%2Fget%2F57e8d5444f50a814f6da8c7dda793f7f1636dfe2564c704c732672dc9644c45d_960.jpg&user=sasint"},
     {name: "Mountain Goat's Rest", image: "https://www.photosforclass.com/download/pixabay-1851092?webUrl=https%3A%2F%2Fpixabay.com%2Fget%2F57e8d0424a5bae14f6da8c7dda793f7f1636dfe2564c704c732673d19544c758_960.jpg&user=Pexels"},
-    {name: "Salmon Creek", image: "https://pixabay.com/get/52e3d5404957a514f6da8c7dda793f7f1636dfe2564c704c732673d19544c758_340.jpg"},
-    {name: "Granite Hill", image: "https://pixabay.com/get/57e1dd4a4350a514f6da8c7dda793f7f1636dfe2564c704c732673d19544c758_340.jpg"},
+    {name: "Salmon Creek", image: "https://photosforclass.com/download/pixabay-3048299?webUrl=https%3A%2F%2Fpixabay.com%2Fget%2F55e0d14b485ba514f6da8c7dda793f7f1636dfe2564c704c732672dc9644c45d_960.jpg&user=kareni"},
+    {name: "Granite Hill", image: "https://photosforclass.com/download/pixabay-1807524?webUrl=https%3A%2F%2Fpixabay.com%2Fget%2F57e8d5444f50a814f6da8c7dda793f7f1636dfe2564c704c732672dc9644c45d_960.jpg&user=sasint"},
     {name: "Mountain Goat's Rest", image: "https://www.photosforclass.com/download/pixabay-1851092?webUrl=https%3A%2F%2Fpixabay.com%2Fget%2F57e8d0424a5bae14f6da8c7dda793f7f1636dfe2564c704c732673d19544c758_960.jpg&user=Pexels"},
-    {name: "Salmon Creek", image: "https://pixabay.com/get/52e3d5404957a514f6da8c7dda793f7f1636dfe2564c704c732673d19544c758_340.jpg"},
-    {name: "Granite Hill", image: "https://pixabay.com/get/57e1dd4a4350a514f6da8c7dda793f7f1636dfe2564c704c732673d19544c758_340.jpg"},
+    {name: "Salmon Creek", image: "https://photosforclass.com/download/pixabay-3048299?webUrl=https%3A%2F%2Fpixabay.com%2Fget%2F55e0d14b485ba514f6da8c7dda793f7f1636dfe2564c704c732672dc9644c45d_960.jpg&user=kareni"},
+    {name: "Granite Hill", image: "https://photosforclass.com/download/pixabay-1807524?webUrl=https%3A%2F%2Fpixabay.com%2Fget%2F57e8d5444f50a814f6da8c7dda793f7f1636dfe2564c704c732672dc9644c45d_960.jpg&user=sasint"},
     {name: "Mountain Goat's Rest", image: "https://www.photosforclass.com/download/pixabay-1851092?webUrl=https%3A%2F%2Fpixabay.com%2Fget%2F57e8d0424a5bae14f6da8c7dda793f7f1636dfe2564c704c732673d19544c758_960.jpg&user=Pexels"},
     ]
 
