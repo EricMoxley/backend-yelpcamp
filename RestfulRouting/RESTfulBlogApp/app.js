@@ -21,6 +21,8 @@ var Blog = mongoose.model("Blog", blogSchema);
 // Restful Routes
 
 
+
+
 app.listen(3000, function(){
     console.log("Server is running");
 });
