@@ -1,5 +1,5 @@
 YelpCamp/data/* 
 YelpCamp/data/db/*
-YelpCamp/v1/node_modules*
-YelpCamp/v2/node_modules*
-RestfulRouting\RESTfulBlogApp\node_modules*
+YelpCamp/v1/node_modules/*
+YelpCamp/v2/node_modules/*
+RestfulRouting\RESTfulBlogApp\node_modules/*
